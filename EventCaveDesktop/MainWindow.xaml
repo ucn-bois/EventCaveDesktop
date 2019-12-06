@@ -1,0 +1,17 @@
+﻿<Window x:Class="EventCaveDesktop.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="EventCave Admin Console" Height="600" Width="1000" Name="TopWindow">
+
+    <Grid>
+        <Menu HorizontalAlignment="Left" VerticalAlignment="Top" Width="{Binding ActualWidth, ElementName=TopWindow}">
+            <MenuItem Header="View">
+                <MenuItem Header="Pending Tickets" HorizontalAlignment="Right" Width="200" 
+               Click="PendingTickets_Click" />
+                <MenuItem Header="Resolved Tickets" HorizontalAlignment="Right" Width="200" 
+               Click="ResolvedTickets_Click" />
+            </MenuItem>
+        </Menu>
+        <Frame Name="PageFrame" Source="Pages/LoginPage.xaml" NavigationUIVisibility="Hidden" Margin="0, 20, 0, 0"/>
+    </Grid>
+</Window>
