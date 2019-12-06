@@ -12,6 +12,6 @@
                Click="ResolvedTickets_Click" />
             </MenuItem>
         </Menu>
-        <Frame Name="PageFrame" Source="Pages/LoginPage.xaml" NavigationUIVisibility="Hidden" Margin="0, 20, 0, 0"/>
+        <Frame Name="PageFrame" NavigationUIVisibility="Hidden" Margin="0, 20, 0, 0"/>
     </Grid>
 </Window>

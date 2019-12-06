@@ -20,7 +20,12 @@ namespace Resources.Controllers
             request.RequestFormat = DataFormat.Json;
 
             IRestResponse<List<Ticket>> response = client.Execute<List<Ticket>>(request);
-            return response.Data;
+            List<Ticket> tickets = new List<Ticket>();
+            if (response.Data != null)
+            {
+                tickets = response.Data;
+            }
+            return tickets;
         }
 
         public ICollection<Ticket> GetResolved()
