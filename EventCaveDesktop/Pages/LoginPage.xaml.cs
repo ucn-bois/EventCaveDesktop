@@ -1,21 +1,6 @@
-﻿using Newtonsoft.Json.Linq;
-using Resources.Controllers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Resources.Utils;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace EventCaveDesktop
 {
@@ -24,14 +9,28 @@ namespace EventCaveDesktop
     /// </summary>
     public partial class Login : Page
     {
+        Authentication auth = Authentication.GetInstance();
         public Login()
         {
             InitializeComponent();
+            if (auth.UserLoggedIn())
+            {
+                loginBtn.Content = "You are logged in";
+                loginBtn.IsEnabled = false;
+            }
         }
 
-        private async void Log_In_Btn_Click(object sender, RoutedEventArgs e)
+        private void Log_In_Btn_Click(object sender, RoutedEventArgs e)
         {
-
+            if (auth.LogIn(userNameBox.Text, passwordBox.Password))
+            {
+                loginBtn.Content = "You are now logged in";
+                loginBtn.IsEnabled = false;
+            }
+            else
+            {
+                loginBtn.Content = "Loggin in failed.";
+            }
         }
     }
 }

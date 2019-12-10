@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Resources.Controllers;
+using Resources.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +17,17 @@ using System.Windows.Shapes;
 
 namespace EventCaveDesktop.Pages
 {
-    /// <summary>
-    /// Interaction logic for CategoryDetailPage.xaml
-    /// </summary>
     public partial class CategoryDetailPage : Page
     {
-        public CategoryDetailPage()
+        CategoryController categoryController = new CategoryController();
+        public CategoryDetailPage(int id)
         {
             InitializeComponent();
+            Category category = categoryController.GetById(id);
+            this.id.Content = category.Id;
+            name.Text = category.Name;
+            description.Text = category.Description;
+            imageLink.Text = category.Image;
         }
     }
 }

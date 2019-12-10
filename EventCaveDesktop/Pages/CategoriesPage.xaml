@@ -9,6 +9,8 @@
       Title="CategoriesPage">
 
     <Grid>
-        
+        <Label Name="header" Content="Categories" Padding="10, 10, 0, 0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="24" FontWeight="Bold"/>
+        <Button Name="createCategoryBtn" Margin="14, 14, 14, 14" Content="Create" Grid.Row="0" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="18" Width="80"/>
+        <ListView Name="categoryList" Margin="0, 60, 0, 0" Grid.Row="1" PreviewMouseLeftButtonUp="listView_Click"/>
     </Grid>
 </Page>

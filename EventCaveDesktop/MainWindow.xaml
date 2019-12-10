@@ -6,12 +6,16 @@
     <Grid>
         <Menu HorizontalAlignment="Left" VerticalAlignment="Top" Width="{Binding ActualWidth, ElementName=TopWindow}">
             <MenuItem Header="View">
+                <MenuItem Header="Log In" HorizontalAlignment="Right" Width="200" 
+               Click="LogIn_Click" />
                 <MenuItem Header="Pending Tickets" HorizontalAlignment="Right" Width="200" 
                Click="PendingTickets_Click" />
                 <MenuItem Header="Resolved Tickets" HorizontalAlignment="Right" Width="200" 
                Click="ResolvedTickets_Click" />
+                <MenuItem Header="Categories" HorizontalAlignment="Right" Width="200" 
+               Click="Categories_Click" />
             </MenuItem>
         </Menu>
-        <Frame Name="PageFrame" NavigationUIVisibility="Hidden" Margin="0, 20, 0, 0"/>
+        <Frame Name="PageFrame" NavigationUIVisibility="Hidden" Margin="0, 20, 0, 0" Source="Pages/LoginPage.xaml"/>
     </Grid>
 </Window>

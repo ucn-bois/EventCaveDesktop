@@ -1,19 +1,8 @@
-﻿using Resources.Controllers;
-using Resources.Entities;
-using System;
+﻿using Resources.Entities;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace EventCaveDesktop.Pages
 {
@@ -31,12 +20,18 @@ namespace EventCaveDesktop.Pages
             listViewLayout.AllowsColumnReorder = true;
             listViewLayout.ColumnHeaderToolTip = header;
 
+            GridViewColumn gvc = new GridViewColumn();
+            gvc.DisplayMemberBinding = new Binding("Id");
+            gvc.Header = "ID";
+            gvc.Width = 50;
+            listViewLayout.Columns.Add(gvc);
+
             GridViewColumn gvc1 = new GridViewColumn();
             gvc1.DisplayMemberBinding = new Binding("Subject");
             gvc1.Header = "Subject";
             gvc1.Width = 150;
-
             listViewLayout.Columns.Add(gvc1);
+
             GridViewColumn gvc2 = new GridViewColumn();
             gvc2.DisplayMemberBinding = new Binding("Message");
             gvc2.Header = "Message";
@@ -46,7 +41,7 @@ namespace EventCaveDesktop.Pages
             GridViewColumn gvc3 = new GridViewColumn();
             gvc3.DisplayMemberBinding = new Binding("SenderUsername");
             gvc3.Header = "Sender";
-            gvc3.Width = 150;
+            gvc3.Width = 100;
             listViewLayout.Columns.Add(gvc3);
 
             GridViewColumn gvc4 = new GridViewColumn();

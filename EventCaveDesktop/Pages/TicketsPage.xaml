@@ -11,5 +11,6 @@
     <Grid>
         <Label Name="header" Content="Tickets" Padding="10, 10, 0, 0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="24" FontWeight="Bold"/>
         <ListView Name="ticketList" Margin="0, 60, 0, 0" Grid.Row="1" PreviewMouseLeftButtonUp="listView_Click"/>
+        <Label Name="messageLabel" Margin="0, 60, 0, 0" Grid.Row="1" Visibility="Hidden"/>
     </Grid>
 </Page>

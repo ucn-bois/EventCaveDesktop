@@ -9,6 +9,13 @@
       Title="CategoryDetailPage">
 
     <Grid>
-        
+        <Label Name="idLabel" Content="ID" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="24, 12, 24, 12"/>
+        <Label Name="nameLabel" Content="Name" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="24, 12, 24, 12" Margin="0,40,0,0"/>
+        <Label Name="descriptionLabel" Content="Description" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="24, 12, 24, 12" Margin="0,80,0,0"/>
+        <Label Name="imageLinkLabel" Content="Image link" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="24, 12, 24, 12" Margin="0,120,0,0"/>
+        <Label Name="id" Content="categoryId" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0, 12, 24, 12" Margin="145,0,0,0"/>
+        <TextBox Name="name" HorizontalAlignment="Left" Height="23" Margin="145,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <TextBox Name="description" HorizontalAlignment="Left" Height="23" Margin="145,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <TextBox Name="imageLink" HorizontalAlignment="Left" Height="23" Margin="145,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
     </Grid>
 </Page>

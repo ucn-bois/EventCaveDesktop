@@ -6,27 +6,36 @@ using System.Windows;
 
 namespace EventCaveDesktop
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    // TODO display a message when an admin needs to log in somehow
     public partial class MainWindow
     {
-        TicketController controller = new TicketController();
+        TicketController ticketController = new TicketController();
+        CategoryController categoryController = new CategoryController();
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        private void LogIn_Click(object sender, RoutedEventArgs e)
+        {
+            PageFrame.Navigate(new Login());
+        }
+
         private void PendingTickets_Click(object sender, RoutedEventArgs e)
         {
-            ICollection<Ticket> pendingTickets = controller.GetPending();
+            ICollection<Ticket> pendingTickets = ticketController.GetPending();
             PageFrame.Navigate(new TicketsPage(pendingTickets, "Pending Tickets"));
         }
 
         private void ResolvedTickets_Click(object sender, RoutedEventArgs e)
         {
-            ICollection<Ticket> resolvedTickets = controller.GetResolved();
+            ICollection<Ticket> resolvedTickets = ticketController.GetResolved();
             PageFrame.Navigate(new TicketsPage(resolvedTickets, "Resolved Tickets"));
+        }
+        private void Categories_Click(object sender, RoutedEventArgs e)
+        {
+            ICollection<Category> categories = categoryController.GetAll();
+            PageFrame.Navigate(new CategoriesPage(categories, "Categories"));
         }
     }
 }

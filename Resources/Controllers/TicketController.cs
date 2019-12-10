@@ -1,30 +1,33 @@
 ﻿using Resources.Entities;
+using Resources.Utils;
 using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Resources.Controllers
 {
     public class TicketController
     {
         RestClient client = new RestClient("https://localhost:44324");
+        Authentication auth = Authentication.GetInstance();
 
         public ICollection<Ticket> GetAll()
         {
             var request = new RestRequest("Api/Tickets", Method.GET);
             request.AddHeader("Content-Type", "application/json; charset=utf-8");
+            auth.AddAuthHeader(request);
             request.RequestFormat = DataFormat.Json;
 
             IRestResponse<List<Ticket>> response = client.Execute<List<Ticket>>(request);
+
             List<Ticket> tickets = new List<Ticket>();
-            if (response.Data != null)
+            if (response.Data != null && auth.UserLoggedIn())
             {
                 tickets = response.Data;
             }
+
             return tickets;
         }
 
@@ -44,6 +47,7 @@ namespace Resources.Controllers
         {
             var request = new RestRequest(String.Format("Api/Tickets/{0}", ticketId), Method.GET);
             request.AddHeader("Content-Type", "application/json; charset=utf-8");
+            auth.AddAuthHeader(request);
             request.RequestFormat = DataFormat.Json;
             IRestResponse<Ticket> response = client.Execute<Ticket>(request);
 
@@ -54,6 +58,7 @@ namespace Resources.Controllers
         {
             bool success = false;
             var request = new RestRequest(string.Format("Api/Tickets/{0}/Resolve", ticketResponse.Id), Method.POST);
+            auth.AddAuthHeader(request);
             request.AddParameter("Response", ticketResponse.Response);
 
             IRestResponse response = client.Execute(request);
