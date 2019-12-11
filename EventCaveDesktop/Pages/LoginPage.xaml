@@ -7,14 +7,13 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Login">
+    
     <Grid>
         <Label Content="Admin console log in" HorizontalAlignment="Center" Margin="0,0,0,250" VerticalAlignment="Center" FontSize="24" FontWeight="Bold"/>
         <Label Content="Username" HorizontalAlignment="Center" Margin="0,0,0,125" VerticalAlignment="Center" Width="160"/>
-        <TextBox Name="userNameBox" HorizontalAlignment="Center" Height="25" Margin="0,0,0,75" TextWrapping="Wrap" VerticalAlignment="Center" Width="150"/>
+        <TextBox Name="userNameBox" Text="testuser" HorizontalAlignment="Center" Height="25" Margin="0,0,0,75" TextWrapping="Wrap" VerticalAlignment="Center" Width="150" VerticalContentAlignment="Center"/>
         <Label Content="Password" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Center" Width="160"/>
-        <PasswordBox Name="passwordBox" HorizontalAlignment="Center" Height="25" Margin="0,75,0,0" VerticalAlignment="Center" Width="150"/>
+        <PasswordBox Name="passwordBox" Password="password1" HorizontalAlignment="Center" Height="25" Margin="0,75,0,0" VerticalAlignment="Center" Width="150" VerticalContentAlignment="Center"/>
         <Button Name="loginBtn" Content="Log In" Height="35" HorizontalAlignment="Center" Margin="0,225,0,0" VerticalAlignment="Center" Width="200" Click="Log_In_Btn_Click" FontSize="16" FontWeight="Bold"/>
     </Grid>
-
-
 </Page>

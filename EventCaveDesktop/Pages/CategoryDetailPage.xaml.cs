@@ -11,23 +11,12 @@ namespace EventCaveDesktop.Pages
     {
         CategoryController categoryController = new CategoryController();
         CategoryViewModel categoryViewModel = new CategoryViewModel();
-
         public CategoryDetailPage(int id)
         {
             InitializeComponent();
-            if (id == 0)
-            {
-                updateBtn.Visibility = Visibility.Hidden;
-                createBtn.Visibility = Visibility.Visible;
-                this.id.Content = "-";
-            }
-            else
-            {
-                updateBtn.Visibility = Visibility.Visible;
-                createBtn.Visibility = Visibility.Hidden;
-                FetchCategory(id);
-                BindData();
-            }
+            FetchCategory(id);
+            BindData();
+
         }
 
         private void FetchCategory(int id)
@@ -42,59 +31,28 @@ namespace EventCaveDesktop.Pages
         private void BindData()
         {
             this.id.Content = categoryViewModel.Id;
-            name.Text = categoryViewModel.Name;
-            description.Text = categoryViewModel.Description;
-            imageLink.Text = categoryViewModel.Image;
+            name.Content = categoryViewModel.Name;
+            description.Content = categoryViewModel.Description;
+            imageLink.Content = categoryViewModel.Image;
         }
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-            categoryViewModel.Name = name.Text;
-            categoryViewModel.Description = description.Text;
-            categoryViewModel.Image = imageLink.Text;
-
-            Category updatedCategory = new Category()
-            {
-                Id = categoryViewModel.Id,
-                Name = categoryViewModel.Name,
-                Description = categoryViewModel.Description,
-                Image = categoryViewModel.Image
-            };
-
-            if (categoryController.Update(updatedCategory))
-            {
-                updateBtn.Background = Brushes.Green;
-                updateBtn.Content = "Sucess";
-            }
-            else
-            {
-                updateBtn.Background = Brushes.Red;
-                updateBtn.Content = "Error";
-            }
+            this.NavigationService.Navigate(new UpdateCategoryPage(categoryViewModel.Id));
         }
-        private void CreateButton_Click(object sender, RoutedEventArgs e)
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            categoryViewModel.Name = name.Text;
-            categoryViewModel.Description = description.Text;
-            categoryViewModel.Image = imageLink.Text;
-
-            Category createdCategory = new Category()
+            if (categoryController.Delete(categoryViewModel.Id))
             {
-                Name = categoryViewModel.Name,
-                Description = categoryViewModel.Description,
-                Image = categoryViewModel.Image
-            };
-
-            if (categoryController.Create(createdCategory))
-            {
-                updateBtn.Background = Brushes.Green;
-                updateBtn.Content = "Sucess";
+                deleteBtn.Background = Brushes.LightGreen;
+                deleteBtn.Content = "Success";
             }
             else
             {
-                updateBtn.Background = Brushes.Red;
-                updateBtn.Content = "Error";
+                deleteBtn.Background = Brushes.IndianRed;
+                deleteBtn.Content = "Error";
             }
+            this.NavigationService.Navigate(new CategoriesPage(categoryController.GetAll(), "Categories"));
         }
     }
 }

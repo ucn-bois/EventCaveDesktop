@@ -4,9 +4,6 @@ using System.Windows.Controls;
 
 namespace EventCaveDesktop
 {
-    /// <summary>
-    /// Interaction logic for LoginPage.xaml
-    /// </summary>
     public partial class Login : Page
     {
         Authentication auth = Authentication.GetInstance();

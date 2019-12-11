@@ -69,8 +69,16 @@ namespace Resources.Utils
 
         public bool TokenExpired()
         {
-            return DateTime.Parse(ActiveToken.Expires) < DateTime.Now;
+            if (UserLoggedIn())
+            {
+                return DateTime.Parse(ActiveToken.Expires) < DateTime.Now;
+            }
+            else
+            {
+                return true;
+            }
         }
+
 
         public bool UserLoggedIn()
         {

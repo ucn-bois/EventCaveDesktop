@@ -50,7 +50,7 @@ namespace EventCaveDesktop.Pages
 
         private void createCategoryBtn_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new CategoryDetailPage(0));
+            this.NavigationService.Navigate(new CreateCategoryPage());
         }
     }
 }

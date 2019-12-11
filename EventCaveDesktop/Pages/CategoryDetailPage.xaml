@@ -10,14 +10,14 @@
 
     <Grid>
         <Label Name="idLabel" Content="ID" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="24, 12, 24, 12"/>
-        <Label Name="nameLabel" Content="Name (max 15 ch.)" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="24, 12, 24, 12" Margin="0,40,0,0"/>
-        <Label Name="descriptionLabel" Content="Description (max 50 ch.)" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="24, 12, 24, 12" Margin="0,80,0,0"/>
+        <Label Name="nameLabel" Content="Name" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="24, 12, 24, 12" Margin="0,40,0,0"/>
+        <Label Name="descriptionLabel" Content="Description" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="24, 12, 24, 12" Margin="0,80,0,0"/>
         <Label Name="imageLinkLabel" Content="Image link" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="24, 12, 24, 12" Margin="0,120,0,0"/>
-        <Label Name="id" Content="categoryId" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="0, 12, 24, 12" Margin="191,0,0,0"/>
-        <TextBox Name="name" HorizontalAlignment="Left" Height="23" Margin="191,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-        <TextBox Name="description" HorizontalAlignment="Left" Height="23" Margin="191,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-        <TextBox Name="imageLink" HorizontalAlignment="Left" Height="23" Margin="191,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
-        <Button Name="updateBtn" Content="Update" Margin="24, 24, 24, 24" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="120" Click="UpdateButton_Click"/>
-        <Button Name="createBtn" Content="Create" Margin="24, 24, 24, 24" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="120" Click="CreateButton_Click"/>
+        <Label Name="id" Content="-" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="24, 12, 24, 12" Margin="191,0,0,0"/>
+        <Label Name="name" Content="name" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="24, 12, 24, 12" Margin="191,40,0,0"/>
+        <Label Name="description" Content="description" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="24, 12, 24, 12" Margin="191,80,0,0"/>
+        <Label Name="imageLink" Content="link" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="24, 12, 24, 12" Margin="191,120,0,0"/>
+        <Button Name="updateBtn" Content="Update" Margin="0,0,161,24" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="120" Click="UpdateButton_Click"/>
+        <Button Name="deleteBtn" Content="Delete" Margin="24, 24, 24, 24" FontWeight="Bold" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="120" Click="DeleteButton_Click"/>
     </Grid>
 </Page>

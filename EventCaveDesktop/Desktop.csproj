@@ -58,6 +58,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Pages\CreateCategoryPage.xaml.cs">
+      <DependentUpon>CreateCategoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UpdateCategoryPage.xaml.cs">
+      <DependentUpon>UpdateCategoryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\CategoryViewModel.cs" />
     <Compile Include="ViewModels\TicketViewModel.cs" />
     <Page Include="Pages\CategoriesPage.xaml">
@@ -65,6 +71,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\CategoryDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CreateCategoryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -98,6 +108,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\TicketsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\UpdateCategoryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

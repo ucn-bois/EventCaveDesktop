@@ -5,7 +5,7 @@
 
     <Grid>
         <Menu HorizontalAlignment="Left" VerticalAlignment="Top" Width="{Binding ActualWidth, ElementName=TopWindow}">
-            <MenuItem Header="View">
+            <MenuItem Header="View" FontSize="14">
                 <MenuItem Header="Log In" HorizontalAlignment="Right" Width="200" 
                Click="LogIn_Click" />
                 <MenuItem Header="Pending Tickets" HorizontalAlignment="Right" Width="200" 
@@ -16,6 +16,6 @@
                Click="Categories_Click" />
             </MenuItem>
         </Menu>
-        <Frame Name="PageFrame" NavigationUIVisibility="Hidden" Margin="0, 20, 0, 0" Source="Pages/LoginPage.xaml"/>
+        <Frame Name="PageFrame" Margin="0, 24, 0, 0" Source="Pages/LoginPage.xaml"/>
     </Grid>
 </Window>
