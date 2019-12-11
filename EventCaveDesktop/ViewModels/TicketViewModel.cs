@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EventCaveDesktop.ViewModels
 {
-    class TicketDetailViewModel
+    public class TicketDetailViewModel
     {
         public int Id { get; set; }
         public string Subject { get; set; }

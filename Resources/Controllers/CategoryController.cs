@@ -61,7 +61,7 @@ namespace Resources.Controllers
         public bool Update(Category category)
         {
             bool success = false;
-            var request = new RestRequest("Api/Categories", Method.PUT);
+            var request = new RestRequest(string.Format("Api/Categories/{0}", category.Id), Method.PUT);
             auth.AddAuthHeader(request);
             request.AddParameter("Name", category.Name);
             request.AddParameter("Description", category.Description);

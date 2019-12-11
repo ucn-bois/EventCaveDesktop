@@ -1,15 +1,11 @@
 ﻿using EventCaveDesktop.ViewModels;
 using Resources.Controllers;
 using Resources.Entities;
-using System;
 using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace EventCaveDesktop.Pages
 {
-    /// <summary>
-    /// Interaction logic for TicketDetailPage.xaml
-    /// </summary>
     public partial class TicketDetailPage : Page
     {
         TicketController ticketController = new TicketController();
@@ -18,11 +14,11 @@ namespace EventCaveDesktop.Pages
         public TicketDetailPage(object ticketId)
         {
             InitializeComponent();
-            fetchTicket(ticketId);
-            bindData();
+            FetchTicket(ticketId);
+            BindData();
         }
 
-        private void fetchTicket(object ticketId)
+        private void FetchTicket(object ticketId)
         {
             Ticket ticket = ticketController.GetById(ticketId);
             viewModel.Id = ticket.Id;
@@ -35,7 +31,7 @@ namespace EventCaveDesktop.Pages
             viewModel.Response = ticket.Response;
         }
 
-        private void bindData()
+        private void BindData()
         {
             id.Content = string.Format("Ticket (ID: {0})", viewModel.Id);
             subject.Content = string.Format("Subject: {0}", viewModel.Subject);
